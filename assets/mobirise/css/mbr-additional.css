@@ -34,3 +34,10 @@
 #slider-5 P {
   color: #000000;
 }
+#msg-box1-5 .mbr-header .mbr-header__text {
+  color: #fff;
+}
+#msg-box1-5 .mbr-article {
+  color: #fff;
+  text-align: left;
+}
