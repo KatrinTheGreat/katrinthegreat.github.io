@@ -1,279 +1,348 @@
 <!DOCTYPE html>
-<html>
 <head>
-  <!-- Site made with Mobirise Website Builder v2.9.10, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v2.9.10, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/mbr-1920x1560.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="assets/mobirise/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise-slider/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+	<title>Augmented Reality</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" /> <meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<script src="vendor/three.js/build/three.js"></script>
+	<script src="vendor/three.js/build/StereoEffect.js"></script>
+	<script src="js/OBJLoader.js"></script>
+	<script src="vendor/three.js/examples/js/loaders/MMDLoader.js"></script>
+
+	<!-- include js-aruco -->
+	<script src='vendor/js-aruco/svd.js'></script>
+	<script src='vendor/js-aruco/posit1-patched.js'></script>
+	<script src='vendor/js-aruco/cv.js'></script>
+	<script src='vendor/js-aruco/aruco.js'></script>
+
+	<!-- include some extensions -->
+	<script src='js/threex.webcamgrabbing.js'></script>
+	<script src='js/threex.imagegrabbing.js'></script>
+	<script src='js/threex.videograbbing.js'></script>
+	<script src='js/threex.jsarucomarker.js'></script>
+	<link href="css/theme.css" rel="stylesheet">
+	<style>
+	video { height: 100vh; min-height: 100%; }
+	</style>
 </head>
-<body>
-<section class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--sticky mbr-navbar--auto-collapse" id="ext_menu-1">
-    <div class="mbr-navbar__section mbr-section">
-        <div class="mbr-section__container container">
-            <div class="mbr-navbar__container">
-                <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
-                    <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
-                        <span class="mbr-brand__logo"><a href="https://mobirise.com"><img src="assets/images/mbr-1920x1560.png" class="mbr-navbar__brand-img mbr-brand__img" alt="Mobirise"></a></span>
-                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="https://mobirise.com">Альфа</a></span>
-                    </span>
-                </div>
-                <div class="mbr-navbar__hamburger mbr-hamburger"><span class="mbr-hamburger__line"></span></div>
-                <div class="mbr-navbar__column mbr-navbar__menu">
-                    <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                        <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active"><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="https://mobirise.com">главная</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="https://mobirise.com">о нас</a></li><li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="https://mobirise.com">контакты</a></li></ul></div>
-                        <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item"><a class="mbr-buttons__btn btn btn-danger" href="https://mobirise.com">красный код</a></li></ul></div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<body style='margin: 0px;background:#000000;overflow: hidden; text-align:center;'>
+<!--<iframe id="mtlList" src="models/model/model.mtl" style="visibility:hidden;width:1px;height:1px"></iframe>-->
+<div id='info' style='position: absolute; top: 0px; width: 100%;font-family:arial; font-weight: bolder; padding-top: 5px;'>
+	<!--<a class='office-button btn btn-lg btn-primary mx-1'  onclick="window.history.back()" href="javascript:void(0);">&larr;</a>-->
+	<a class='office-button image btn btn-lg btn-primary mx-1' href='#image'>Тест</a>
+	<a class='office-button webcam btn btn-lg btn-primary mx-1' href='#webcam'>Вебкамера</a>
+</div>
 
-<section class="engine"><a rel="external" href="https://mobirise.com">free html website builder</a></section><section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header1-2" style="background-image: url(assets/images/mbr-1920x1249.jpg);">
-    <div class="mbr-box__magnet mbr-box__magnet--sm-padding mbr-box__magnet--center-left mbr-after-navbar">
-        
-        <div class="mbr-box__container mbr-section__container container">
-            <div class="mbr-box mbr-box--stretched"><div class="mbr-box__magnet mbr-box__magnet--center-left">
-                <div class="row"><div class=" col-sm-6">
-                    <div class="mbr-hero animated fadeInUp">
-                        <h1 class="mbr-hero__text">Что-то угрожает вашей жизни?</h1>
-                        
-                    </div>
-                    
-                </div></div>
-            </div></div>
-        </div>
-        <div class="mbr-arrow mbr-arrow--floating text-center">
-            <div class="mbr-section__container container">
-                <a class="mbr-arrow__link" href="#msg-box4-3"><i class="glyphicon glyphicon-menu-down"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
+<script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		//location.reload();
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Handle ui button
+	//////////////////////////////////////////////////////////////////////////////////
+	document.querySelector('#info .webcam').addEventListener('click', function(event){
+		location.hash	= '#webcam';
+		location.reload(true);
+	})
+	document.querySelector('#info .image').addEventListener('click', function(event){
+		location.hash	= '#image';
+		location.reload(true);
+	})
 
-<section class="mbr-section mbr-section--relative" id="msg-box4-3" style="background-color: rgb(0, 0, 0);">
-    
-    <div class="mbr-section__container mbr-section__container--isolated container">
-        <div class="row">
-            <div class="mbr-box mbr-box--fixed mbr-box--adapted">
-                <div class="mbr-box__magnet mbr-box__magnet--top-right mbr-section__left col-sm-6">
-                    <figure class="mbr-figure mbr-figure--adapted mbr-figure--caption-inside-bottom mbr-figure--full-width"><img src="assets/images/1400x788.png" class="mbr-figure__img"></figure>
-                </div>
-                <div class="mbr-box__magnet mbr-class-mbr-box__magnet--center-left col-sm-6 mbr-section__right">
-                    <div class="mbr-section__container mbr-section__container--middle">
-                        <div class="mbr-header mbr-header--auto-align mbr-header--wysiwyg">
-                            <h3 class="mbr-header__text">Мы разберемся даже в самых непонятных ситуациях</h3>
-                            
-                        </div>
-                    </div>
-                    <div class="mbr-section__container mbr-section__container--middle">
-                        <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg"><p>Если вы увидели летающих людей или теплицы, деревья в квартире, а также другие странные вещи, то срочно обращайтесь к нам за помощью. Наши сотруднки окажут вам полный спектор услуг.</p></div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-slider mbr-section mbr-section--no-padding carousel slide" data-ride="carousel" data-wrap="true" data-interval="5000" id="slider2-4">
-    <div class="mbr-section__container container article-slider mbr-section__container--isolated">
-        <div class=" col-sm-8 col-sm-offset-2">
-            <ol class="carousel-indicators">
-                <li data-app-prevent-settings="" data-target="#slider2-4" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider2-4" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider2-4" class="" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center active">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-right">
-                    <div class="mbr-overlay"></div>                        
-                        <div>
-                            <img src="assets/images/1920x1080.png">
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-5">  
-
-                                <div class="mbr-hero">
-                                    <h1 class="mbr-hero__text">Микки</h1>
-
-                                    <p class="mbr-hero__subtext">Если вы думаете, что это Джим, то вы ошибаетесь. Это его брат близнец. Профессиональные навыки у них в крови.</p>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-left">
-                    <div class="mbr-overlay"></div>                        
-                        <div>
-                            <img src="assets/images/mbr-1-1920x1280.jpg">
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-1">  
-
-                                <div class="mbr-hero">
-                                    <h1 class="mbr-hero__text">Шо</h1>
-
-                                    <p class="mbr-hero__subtext">Это брутальный Шо. Он плохой специалист, но его фотография привлекает внимание. Если вам нужна модель для фотосъёмки, то обращайтесь к Шо.</p>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-right">
-                    <div class="mbr-overlay"></div>                        
-                        <div>
-                            <img src="assets/images/1920x1080.png">
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-5">  
-
-                                <div class="mbr-hero">
-                                    <h1 class="mbr-hero__text">Джим</h1>
-
-                                    <p class="mbr-hero__subtext">Джим является нашим лучшим сотредником. Он прошёл обучение в нашей фирме, а так же повышал свои навыки на курсах. Джим зафиксировал около дюжины анамальных явлений.&nbsp;</p>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider2-4">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider2-4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-slider mbr-section mbr-section--no-padding carousel slide" data-ride="carousel" data-wrap="true" data-interval="5000" id="slider-5" style="background-color: rgb(255, 255, 255);">
-    <div class="mbr-section__container">
-        <div>
-            <ol class="carousel-indicators">
-                <li data-app-prevent-settings="" data-target="#slider-5" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider-5" class="" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider-5" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center mbr-section--full-height active" style="background-image: url(assets/images/mbr-2-1920x1280.jpg);">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-left mbr-box__magnet--sm-padding">
-                                            
-                        <div class=" container">
-                            
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-1">  
-
-                                <div class="mbr-hero">
-                                    <h1 class="mbr-hero__text">Внимание</h1>
-
-                                    <p class="mbr-hero__subtext">Возможно, после просмотра нашего сайта вы начали нервничать, поэтому предлагаем вам красивые картинки, которые вас успокоят.</p>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center mbr-section--full-height" style="background-image: url(assets/images/chgo9a1-1920x1017.png);">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-left mbr-box__magnet--sm-padding">
-                                            
-                        <div class=" container">
-                            
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-1">  
-
-                                <div class="mbr-hero">
-                                    
-
-                                    
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted item dark center mbr-section--full-height" style="background-image: url(assets/images/download-1920x975.png);">
-                    <div class="mbr-box__magnet mbr-box__magnet--center-left mbr-box__magnet--sm-padding">
-                                            
-                        <div class=" container">
-                            
-                            <div class="row">
-                                <div class=" col-md-6 col-md-offset-1">  
-
-                                <div class="mbr-hero">
-                                    
-
-                                    
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider-5">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider-5">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section mbr-section--relative mbr-section--short-paddings" id="msg-box1-5" style="background-color: rgb(0, 0, 0);">
-
-    
-
-    <div class="mbr-section__container mbr-section__container--isolated container">
-        <div class="row">
-            <div class="mbr-box mbr-box--fixed mbr-box--adapted">
-                <div class="mbr-box__magnet mbr-box__magnet--top-left mbr-section__left col-sm-8">
-                    
-                    <div class="mbr-section__container">
-                        <div class="mbr-article mbr-article--auto-align mbr-article--wysiwyg"><p></p><p><a href="http://katrinthegreat.github.io/alpha/">релаксация</a><br></p><p></p></div>
-                    </div>
-                </div>
-                <div class="mbr-box__magnet mbr-box__magnet--top-left mbr-section__right col-sm-4">
-                    <div class="mbr-section__container">
-                        <div class="mbr-buttons mbr-buttons--auto-align mbr-buttons--top mbr-buttons--left"><a class="mbr-buttons__btn btn btn-lg btn-danger" href="https://katrinthegreat.github.io/assets/шрифт.otf">скачать</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
+	/*document.querySelector('#info .video').addEventListener('click', function(event){
+		location.hash	= '#video'
+		location.reload()
+	})*/
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smooth-scroll/SmoothScroll.js"></script>
-  <script src="assets/jarallax/jarallax.js"></script>
-  <script src="assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
-  <script src="assets/mobirise/js/script.js"></script>
-  
-  
-</body>
-</html>
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Init Sound
+	//////////////////////////////////////////////////////////////////////////////////
+	try{
+		var soundUrl = 'sounds/sound.mp3'
+		var audio = new Audio(soundUrl);
+		audio.play();
+	}catch(e){
+	}
+	
+	//play();
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Init
+	//////////////////////////////////////////////////////////////////////////////////
+
+	// init renderer
+	var effect;
+	var camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.01, 1000);
+	camera.position.z = 0;
+	
+	var renderer	= new THREE.WebGLRenderer({
+		antialias	: true,
+		alpha		: true,
+	});
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.shadowMapEnabled = true;
+	renderer.shadowMapSoft = true;
+	renderer.shadowMapType = THREE.PCFSoftShadowMap;
+
+	renderer.shadowCameraNear = 3;
+	renderer.shadowCameraFar = camera.far;
+	renderer.shadowCameraFov = 50;
+
+	renderer.shadowMapBias = 0.0039;
+	renderer.shadowMapDarkness = 0.5;
+	renderer.shadowMapWidth = 1024;
+	renderer.shadowMapHeight = 1024;
+	
+	//effect = new THREE.StereoEffect( renderer );
+	//effect.setSize( window.innerWidth, window.innerHeight );
+				
+	document.body.appendChild( renderer.domElement );
+
+	// array of functions for the rendering loop
+	var onRenderFcts = [];
+
+	// init scene and camera
+	var scene = new THREE.Scene()
+
+
+	//var markerObject3D = new THREE.Object3D
+	//scene.add(markerObject3D)
+	
+	var markerObjectTwo = new THREE.Object3D
+	scene.add(markerObjectTwo)
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		set 3 point lighting						//
+	//////////////////////////////////////////////////////////////////////////////////
+	;(function(){	
+		var object3d	= new THREE.AmbientLight(0x101010)
+		object3d.name	= 'Ambient light'
+		scene.add(object3d)
+		
+		var object3d	= new THREE.DirectionalLight('white', 0.1*1.6)
+		object3d.position.set(2.6,1,3).setLength(1)
+		object3d.name	= 'Back light'
+		scene.add(object3d)
+
+		var object3d	= new THREE.DirectionalLight('white', 0.375*1.6)
+		object3d.position.set(-2, -1, 0)
+		object3d.name 	= 'Key light'
+		object3d.castShadow = true;
+		scene.add(object3d)
+		
+		var object3d	= new THREE.DirectionalLight('white', 0.8*1)
+		object3d.position.set(3, 3, 2)
+		object3d.castShadow = true;
+		object3d.name	= 'Fill light'
+		scene.add(object3d)
+
+	})()
+
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		add an object in the scene
+	//////////////////////////////////////////////////////////////////////////////////
+
+	// add some debug display
+	;(function(){			
+		//var geometry = new THREE.PlaneBufferGeometry(1,1,10,10); //PlaneGeometry
+		//var material = new THREE.SpriteMaterial({
+		//	map: THREE.ImageUtils.loadTexture( 'images/transperent.png' ),
+		//});
+		//var material = new THREE.MeshBasicMaterial( {
+		//	wireframe : false,
+		//	color:'#cfc0c3'
+		//})
+		//var mesh = new THREE.Mesh(geometry, material);
+		//mesh.receiveShadow = true;
+		//markerObject3D.add( mesh );
+
+		//var mesh = new THREE.AxisHelper
+		//markerObject3D.add( mesh );
+	})()
+
+	// add a awesome logo to the scene
+	;(function(){
+		// return
+		//var material = new THREE.SpriteMaterial({
+		//	map: THREE.ImageUtils.loadTexture( 'images/awesome.png' ),
+		//});
+		//var geometry = new THREE.BoxGeometry(1,1,1)
+		//var object3d = new THREE.Sprite(material );
+		//object3d.scale.set( 1, 1, 1 ).multiplyScalar(1.3)
+		//object3d.position.z	= 1.4
+		//markerObject3D.add(object3d);
+		//markerObjectTwo.add(object3d);
+
+		//onRenderFcts.push(function(now, delta){
+			//var angle = Math.PI * now / 1000;
+			//object3d.position.z	= 1.4 + Math.cos(angle)*0.1
+
+			//var angle = Math.PI * now / 1000;
+			//object3d.position.x	= 0 + Math.sin(angle)*0.1
+		//})
+	})()
+
+	;(function(){
+		var onProgress = function ( xhr ) {
+			if ( xhr.lengthComputable ) {
+				var percentComplete = xhr.loaded / xhr.total * 100;
+				console.log( Math.round(percentComplete, 2) + '% downloaded' );
+			}
+		};
+
+		var onError = function ( xhr ) {
+		};
+		var manager = new THREE.LoadingManager();
+			manager.onProgress = function ( item, loaded, total ) {
+		};				
+		var modelUrl = 'models/';
+		var texture = new THREE.Texture();	
+		var loader = new THREE.ImageLoader( manager );
+		loader.load( modelUrl + 'model/model.jpeg', function ( image ) {
+
+			texture.image = image;
+			texture.needsUpdate = true;
+
+		} );
+
+		/*var loader = new THREE.MMDLoader();
+		loader.load( modelUrl+'miku/miku_v2.pmd', modelUrl+'miku/wavefile_v2.vmd', function onLoad(mesh){
+			mesh.scale.set(1,1,1).multiplyScalar(1/20)
+			mesh.rotation.x = Math.PI/2
+			mesh.castShadow = true;
+			markerObject3D.add( mesh );			
+		},onProgress,onError);*/
+		
+		//----------------- model
+		var objloader = new THREE.OBJLoader( manager );
+		objloader.load( modelUrl + 'model/model.obj', function ( mesh )
+		{
+			mesh.traverse( function ( child ) {
+				if ( child instanceof THREE.Mesh ) {
+					child.material.map = texture;
+				}
+
+			} );
+			mesh.scale.set(1,1,1).multiplyScalar(1/120)
+			mesh.rotation.x = Math.PI/2
+			//mesh.rotation.y = Math.PI
+			//mesh.position.x = 1;
+			markerObjectTwo.castShadow = true;
+			markerObjectTwo.add( mesh );
+
+		}, onProgress, onError );	
+		//-----------------
+	})()
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		render the whole thing on the page
+	//////////////////////////////////////////////////////////////////////////////////
+
+	// handle window resize
+	window.addEventListener('resize', function(){				
+		try{
+			var domEl = document.getElementsByTagName('video')[0];
+			let w = v.videoWidth;
+			let h = v.videoHeight;
+			renderer.setSize(w,h);
+			console.log('video size: ' + w + 'x'+h);
+			//camera.aspect = asp;
+			camera.aspect	= w / h;
+			renderer.setSize(w,h);
+			//effect.setSize(domEl.offsetWidth, domEl.offsetHeight);
+		}catch(e){
+			camera.aspect	= window.innerWidth / window.innerHeight
+			renderer.setSize( window.innerWidth, window.innerHeight );
+		}
+		camera.updateProjectionMatrix();
+		
+	},
+	false);
+
+
+	// render the scene
+	onRenderFcts.push(function(){
+		renderer.render( scene, camera );
+		//effect.render( scene, camera );
+	})
+
+	// run the rendering loop
+	var previousTime = performance.now()
+	requestAnimationFrame(function animate(now){
+
+		requestAnimationFrame( animate );
+
+		onRenderFcts.forEach(function(onRenderFct){
+			onRenderFct(now, now - previousTime)
+		})
+
+		previousTime	= now
+	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Do the Augmented Reality Upgrade
+	//////////////////////////////////////////////////////////////////////////////////
+
+
+	// init the marker recognition
+	var jsArucoMarker	= new THREEx.JsArucoMarker()
+
+	// if no specific image source is specified, take the webcam by default
+	if( location.hash === '' )	location.hash = '#image'
+
+	// init the image source grabbing
+	if( location.hash === '#video' ){
+		var videoGrabbing = new THREEx.VideoGrabbing()
+		jsArucoMarker.videoScaleDown = 10
+	}else if( location.hash === '#webcam' ){
+		var videoGrabbing = new THREEx.WebcamGrabbing()
+		jsArucoMarker.videoScaleDown = 2
+	}else if( location.hash === '#image' ){
+		var videoGrabbing = new THREEx.ImageGrabbing()
+		jsArucoMarker.videoScaleDown = 10
+	}else console.assert(false)
+
+	// attach the videoGrabbing.domElement to the body
+        document.body.appendChild(videoGrabbing.domElement)
+
+	// process the image source with the marker recognition
+	var currObject3d = markerObjectTwo;
+	onRenderFcts.push(function(){
+		var domElement	= videoGrabbing.domElement
+		var markers	= jsArucoMarker.detectMarkers(domElement)
+		var object3d = currObject3d;		
+		object3d.visible = false
+		try{
+			/*let w = domElement.videoWidth;
+			let h = domElement.videoHeight;
+			let rel = h/w;
+			w = window.innerWidth;
+			h = w*rel;
+			renderer.setSize(w,h);			
+			camera.aspect	= h/w;
+			renderer.setSize(w,h);*/
+			//console.log('video size: ' + w + 'x'+h);
+		}catch(err){
+			console.error("Cant video due to ", err);
+		}
+		// see if this.markerId has been found
+		markers.forEach(function(marker){			
+			if(marker.id == 401){
+				object3d = markerObjectTwo;//markerObjectTwo;
+			}
+			//else{
+			//	object3d = markerObject3D;
+			//}						
+			currObject3d = object3d;
+			jsArucoMarker.markerToObject3D(marker, object3d);
+			//console.log('marker.id = ' + marker.id);
+
+			object3d.visible = true
+		})
+	})
+</script></body>
